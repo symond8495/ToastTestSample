@@ -1,14 +1,13 @@
 package com.example.toasttestsample
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
-    private val onClickEvent = Button1OnClickEvent(context = this, supportFragmentManager)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,10 +21,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         button3.setOnClickListener(this)
     }
     override fun onClick(view: View){
-        when (view.id) { // when式を用いて条件分岐
-            R.id.button -> onClickEvent.button1OnClickButton()
-//            R.id.button2 -> onClickEvent.button2OnClickButton()
-//            R.id.button3 -> onClickEvent.button3OnClickButton()
+        var onClickEvent = Event.event(view, this, supportFragmentManager)
+        onClickEvent.onClick()
+    }
+}
+
+class Event() {
+    companion object {
+        fun event(view: View, context: Context, supportFragmentManager : FragmentManager): OnClickEventInterface {
+            when(view.id){
+                R.id.button -> return Button1OnClickEvent(context = context, supportFragmentManager)
+                R.id.button2 -> return Button2OnClickEvent(context = context, supportFragmentManager)
+                R.id.button3 -> return Button3OnClickEvent(context = context, supportFragmentManager)
+            }
+            return throw IllegalStateException("アクティビティがnullです")
         }
     }
 }
