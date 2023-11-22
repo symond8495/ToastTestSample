@@ -1,4 +1,4 @@
-package com.example.toasttestsample
+package com.example.toasttestsample.dialogFragment
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
-class Button2DialogFragment : DialogFragment(), DialogFragmentInterface{
+class Button2DialogFragment : DialogFragment(), DialogFragmentInterface {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             // Use the Builder class for convenient dialog construction

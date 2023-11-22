@@ -1,4 +1,4 @@
-package com.example.toasttestsample
+package com.example.toasttestsample.dialogFragment
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 
-class Button1DialogFragment : DialogFragment(), DialogFragmentInterface{
+class Button3DialogFragment : DialogFragment(), DialogFragmentInterface {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
             // Use the Builder class for convenient dialog construction
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("Button1")
-            builder.setMessage("Button1が押されました")
+            builder.setTitle("Button3")
+            builder.setMessage("Button3が押されました")
             builder.setPositiveButton("OK", OnClickDialogButtonListener())
             builder.setNegativeButton("NO", OnClickDialogButtonListener())
             builder.create()

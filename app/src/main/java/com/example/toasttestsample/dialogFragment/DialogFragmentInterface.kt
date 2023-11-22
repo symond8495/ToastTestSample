@@ -1,4 +1,4 @@
-package com.example.toasttestsample
+package com.example.toasttestsample.dialogFragment
 
 import android.app.Dialog
 import android.os.Bundle

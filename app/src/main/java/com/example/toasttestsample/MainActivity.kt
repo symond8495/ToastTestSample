@@ -6,6 +6,10 @@ import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import com.example.toasttestsample.onClickEvent.Button1OnClickEvent
+import com.example.toasttestsample.onClickEvent.Button2OnClickEvent
+import com.example.toasttestsample.onClickEvent.Button3OnClickEvent
+import com.example.toasttestsample.onClickEvent.OnClickEventInterface
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {

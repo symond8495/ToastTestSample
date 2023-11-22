@@ -1,4 +1,4 @@
-package com.example.toasttestsample
+package com.example.toasttestsample.onClickEvent
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager

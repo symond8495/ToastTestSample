@@ -1,9 +1,11 @@
-package com.example.toasttestsample
+package com.example.toasttestsample.onClickEvent
 
 import android.content.Context
 import androidx.fragment.app.FragmentManager
+import com.example.toasttestsample.dialogFragment.Button2DialogFragment
 
-public class Button2OnClickEvent(context: Context, supportFragmentManager: FragmentManager): OnClickEventInterface {
+public class Button2OnClickEvent(context: Context, supportFragmentManager: FragmentManager):
+    OnClickEventInterface {
     override var context: Context
     override var supportFragmentManager: FragmentManager
     init{
